@@ -32,28 +32,9 @@ public class TestinMapApisInJava8 {
 		
 		//get content of map using old way
 		//itrateOverMapInJava ();
-		/*
-		 * OUTPUT:
-		 * 
-		 * Key --> four value --> 4
-		 * Key --> one value --> 1
-		 * Key --> two value --> 2 
-		 * Key--> three value --> 3
-		 * Key --> five value --> 5
-		 */
-		
-		//get content of map using new way
-		
-	//	iterateOverMapUsingJava8();
-		/*
-		 * OUTPUT:
-		 *  Key --> four    value --> 4
-			Key --> one    value --> 1
-			Key --> two    value --> 2
-			Key --> three    value --> 3
-			Key --> five    value --> 5
-		 * 
-		 */
+	
+		//get content of map using new way	
+	    //iterateOverMapUsingJava8();
 		
 		printFreqMap();
 
@@ -65,11 +46,31 @@ public class TestinMapApisInJava8 {
 			
 			System.out.println("Key --> "+ entry.getKey() + "    value --> " + entry.getValue());
 		}
+		
+		/*
+		 * OUTPUT:
+		 * 
+		 * Key --> four value --> 4
+		 * Key --> one value --> 1
+		 * Key --> two value --> 2 
+		 * Key--> three value --> 3
+		 * Key --> five value --> 5
+		 */
 	}
 	
 	public static void iterateOverMapUsingJava8() {
 		
 		map.forEach((k,v) -> {System.out.println("Key --> "+ k + "    value --> " + v);});
+		
+		/*
+		 * OUTPUT:
+		 *  Key --> four    value --> 4
+			Key --> one    value --> 1
+			Key --> two    value --> 2
+			Key --> three    value --> 3
+			Key --> five    value --> 5
+		 * 
+		 */
 	}
 
 	
@@ -81,5 +82,18 @@ public class TestinMapApisInJava8 {
 												);
 		
 		freqMap.forEach((k,v) -> {System.out.println("Key --> "+ k + "    value --> " + v);});
+		
+		/*
+		 * OUTPUT:
+		 * 
+		 *  Key --> six    value --> 1
+			Key --> four    value --> 2
+			Key --> one    value --> 1
+			Key --> seven    value --> 1
+			Key --> five    value --> 1
+			Key --> three    value --> 3
+			Key --> two    value --> 3
+
+		 */
 	}
 }
