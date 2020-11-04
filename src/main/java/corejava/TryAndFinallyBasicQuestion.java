@@ -11,8 +11,9 @@ public class TryAndFinallyBasicQuestion {
 	static Boolean getTrueOrFlase() {
 
 		try {
-			return true;
-			//System.out.println("Some code"); --> This will not compile unreachable code
+		  	return true;
+			//throw new Exception();
+			//System.out.println("Some code");// --> This will not compile unreachable code
 		} catch (Exception e) {
 			
 			// no o/p 
@@ -24,7 +25,13 @@ public class TryAndFinallyBasicQuestion {
 		}
 
 		finally {
+			final String str="umesh"; //we can  declare variable in final block <-- this was asked in transunion cibil interview
 			return false;
 		}
 	}
 }
+/*
+ * output:
+ * 
+ * Get -->false
+ */

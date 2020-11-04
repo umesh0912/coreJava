@@ -13,15 +13,16 @@ public class StaticCheck {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 	
-		System.out.print(" In Main");
+		System.out.println(" In Main");
 	}
 	
 	static {
 		
-		System.out.print(" In Stataic bloack of class StaticCheck");
+		System.out.println(" In Stataic bloack of class StaticCheck");
 	}
 
 }
 //O/P
 
-//In Stataic bloack of class StaticCheck In Main
+//In Stataic bloack of class StaticCheck
+//In Main
