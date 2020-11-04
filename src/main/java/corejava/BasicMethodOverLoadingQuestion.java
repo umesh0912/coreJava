@@ -20,7 +20,6 @@ public class BasicMethodOverLoadingQuestion {
    class B extends A {
 	   
 	   public void method1(Object b) throws SQLException {
-		   
 		   System.out.println("In Class B method1(Obj)");
 	   };
 	   
@@ -44,17 +43,17 @@ public class BasicMethodOverLoadingQuestion {
    }
    
    
-   public static void main(String[] args) {
+   public static void main(String[] args) throws Exception {
 	//	new BasicMethodOverLoadingQuestion().Add(new Integer(10),10);
 		// will print In wrapper, primitive
 		// and new BasicMethodOverLoadingQuestion().Add(10,10)
 		// will print In primitive, primitive
 		
-		B b = new BasicMethodOverLoadingQuestion ().new B();
+		A b = new BasicMethodOverLoadingQuestion ().new B();
 		
 		try {
 			b.method1(new Object());
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} // -->In Class B method1(Obj)
