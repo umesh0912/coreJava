@@ -1,5 +1,6 @@
 package corejava;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -34,11 +35,25 @@ public class SortingUsingNewLambdaWay {
 		//Sort in ASCH order
 		p.sort(Comparator.comparingInt(Person::getAge));
 		
+		p.sort(Comparator.comparing(Person::getFName));
+		
 		//ReversedOrder
 		//p.sort(Comparator.comparingInt(Person::getAge).reversed());
 		
 		//p.sort(Comparator.reverseOrder()));
 		p.forEach(System.out::println);
+		
+		List<String> str = new ArrayList();
+		
+		str.add("20");
+		str.add("5");
+		str.add("8");
+		
+		//Collections.sort(str); // no impact
+		
+		str.sort((p1,p2)-> p1.compareTo(p2));// no impact
+		
+		str.stream().forEach(System.out::println);
 
 	}
 }
