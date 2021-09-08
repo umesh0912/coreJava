@@ -49,7 +49,6 @@ public class TestinMapApisInJava8 {
 		
 		/*
 		 * OUTPUT:
-		 * 
 		 * Key --> four value --> 4
 		 * Key --> one value --> 1
 		 * Key --> two value --> 2 
