@@ -19,7 +19,7 @@ public class BasicMethodOverLoadingQuestion {
 	 *  1) if parent class method throwing EOFException and child class overridden method throws IOException then we will get compile time error
 	 *    --> bcs IOException is superclass of EOFException
 	 *    
-	 *  2) if parent class method not throwing any exception and child class overridden method throws IOEception/EOFException the also we get compile tine error
+	 *  2) if parent class method not throwing any exception and child class overridden method throws IOEception/EOFException then also we get compile tine error
 	 *  
 	 * 2) for unchecked exceptions,
 	 *   This type of exception can appeared anywhere in the program

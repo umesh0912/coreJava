@@ -89,10 +89,10 @@ public class EmployeeTest {
 			System.out.println(flag);
 		}));
 
-		int[] arr = { 2, 5, 7, 6, 3, 9 };
+		int[] arr = { 2, 3, 5, 7, 6, 3, 9 };
 		
 		//Arrays.sort(arr);
-		int  target=10;
+		int  target=4;
 		
 		System.out.println("close to "+ target+ "--> " + findClosest(arr, target));
 	

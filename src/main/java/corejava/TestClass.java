@@ -1,9 +1,6 @@
 package corejava;
 
 import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -14,6 +11,10 @@ public class TestClass {
 		// TODO Auto-generated method stub
 
 		Integer[] inputArray = { 1, 3, 4, 3, 5, 2, 3, 6, 7, 1, 4, 6, 8, 9, 11, 3, 4 };
+		
+		int no1=4, no2=5;
+		Sum sum = (n1,n2) -> n1+n2;
+		System.out.println("Addition: " + sum.sum(no1, no2));
 
 		int mx = Integer.MIN_VALUE;
 
@@ -70,8 +71,6 @@ public class TestClass {
 		int num = 0;
 		int counter=0;
 		
-		for(int i=0;i< arr.length;i++) {
-			System.out.print(" "+arr[i]);}
 
 		for(int i=0;i< arr.length;i++) {
 				

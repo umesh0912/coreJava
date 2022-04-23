@@ -14,7 +14,9 @@ public class SortingUsingNewLambdaWay {
 		// TODO Auto-generated method stub
 
 		List<Person> p = Utils.getPersonsList();
-
+		
+		System.out.println("Before sorting ");
+		p.forEach(System.out::println);
 //		Comparator<Person> sortByAge = new Comparator<Person>() {
 //
 //			public int compare(Person o1, Person o2) {
@@ -33,16 +35,18 @@ public class SortingUsingNewLambdaWay {
 		//p.sort((p1,p2)-> p1.getFName().compareTo(p2.getFName()));
 		
 		//Sort in ASCH order
-		p.sort(Comparator.comparingInt(Person::getAge));
+		p.sort(Comparator.comparingInt(Person::getAge).thenComparing(Person::getFName));
 		
-		p.sort(Comparator.comparing(Person::getFName));
+		//sp.sort(Comparator.comparing(Person::getFName));
 		
 		//ReversedOrder
 		//p.sort(Comparator.comparingInt(Person::getAge).reversed());
 		
+		System.out.println("Before sorting ");
 		//p.sort(Comparator.reverseOrder()));
 		p.forEach(System.out::println);
 		
+		// #imp
 		List<String> str = new ArrayList();
 		
 		str.add("20");

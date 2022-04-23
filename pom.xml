@@ -7,7 +7,25 @@
 	<artifactId>corejava</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Core java basic</name>
+	
+	<properties>
+        <org.slf4j.version>1.7.30</org.slf4j.version>
+        <logback.version>1.2.3</logback.version>	
+        <jython.version>2.7.2</jython.version>
+	</properties>
 
+	<distributionManagement>
+	    <repository>
+	        <id>central</id>
+	        <name>e0e036107278-releases</name>
+	        <url>http://localhost:8081/artifactory/maven-local-repo</url>
+	    </repository>
+	    <snapshotRepository>
+	        <id>snapshots</id>
+	        <name>e0e036107278-snapshots</name>
+	        <url>http://localhost:8081/artifactory/maven-local-repo</url>
+	    </snapshotRepository>
+	</distributionManagement>
 	<dependencies>
 
 		<dependency>
@@ -23,6 +41,33 @@
 			<version>4.8.28</version>
 		</dependency>
 
+        <dependency>
+            <groupId>org.python</groupId>
+            <artifactId>jython-slim</artifactId>
+            <version>${jython.version}</version>
+        </dependency>
+		
+        <!-- logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>		
 	</dependencies>
 
 	<build>
