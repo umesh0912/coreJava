@@ -5,3 +5,6 @@ target
 .settings
 .classpath
 bin
+/.data_20200601.parquet.crc
+/.data_20200602.parquet.crc
+/.factorypath

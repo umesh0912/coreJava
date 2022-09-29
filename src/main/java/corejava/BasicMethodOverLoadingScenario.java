@@ -3,7 +3,7 @@ package corejava;
 import java.sql.SQLException;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class BasicMethodOverLoadingQuestion {
+public class BasicMethodOverLoadingScenario {
 
 	/*
 	 * Exception scenarios in overloading and overriding methods
@@ -19,7 +19,7 @@ public class BasicMethodOverLoadingQuestion {
 	 *  1) if parent class method throwing EOFException and child class overridden method throws IOException then we will get compile time error
 	 *    --> bcs IOException is superclass of EOFException
 	 *    
-	 *  2) if parent class method not throwing any exception and child class overridden method throws IOEception/EOFException then also we get compile tine error
+	 *  2) if parent class method not throwing any exception and child class overridden method throws IOEception/EOFException then also we get compile time error
 	 *  
 	 * 2) for unchecked exceptions,
 	 *   This type of exception can appeared anywhere in the program
@@ -66,17 +66,21 @@ public class BasicMethodOverLoadingQuestion {
    
    
    public static void main(String[] args) throws Exception {
-	//	new BasicMethodOverLoadingQuestion().Add(new Integer(10),10);
+	//	new BasicMethodOverLoadingScenario().Add(new Integer(10),10);
 		// will print In wrapper, primitive
-		// and new BasicMethodOverLoadingQuestion().Add(10,10)
+		// and new BasicMethodOverLoadingScenario().Add(10,10)
 		// will print In primitive, primitive
 		
-		A b = new BasicMethodOverLoadingQuestion ().new B();
+		A b = new BasicMethodOverLoadingScenario ().new B();
+		
+		//B b1 = (B) new BasicMethodOverLoadingScenario().new A(); //java.lang.ClassCastException
+		
+		b.method1("uj");
 		
 		/*
 		 *  V.I.M.P note 
 		   
-			1)  A b = new BasicMethodOverLoadingQuestion ().new B();
+			1)  A b = new BasicMethodOverLoadingScenario ().new B();
 			   
 			    Reference is of parent class and object is of child class so  parent class method1 get called
 			    and if that method1 is overridden in child class then that will be called
@@ -109,12 +113,12 @@ public class BasicMethodOverLoadingQuestion {
 					In Class A method1()
 					In Class A method1()
 					
-			2)  B b = new BasicMethodOverLoadingQuestion ().new B();
+			2)  B b = new BasicMethodOverLoadingScenario ().new B();
 			 
 			    in class B there are method1(String) and method1(Integer) And Method(Object)  are available 
 			    
 			     so,  b.method1(null) throws compilation error because 
-			     Integer , Object and String can be null so there will be ambiguty so compilation fails
+			     Integer , Object and String can be null so there will be ambiguity so compilation fails
 			   
 			    if we called following methods on b object
 			    

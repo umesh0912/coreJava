@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-public class HashSetTest {
+public class HashSetAndHashMapTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -27,7 +27,7 @@ public class HashSetTest {
 		
 		s.forEach(System.out::println);
 		
-		System.err.println("73 is prime ->" + isPrimeNumber(10));
+		System.err.println("73 is prime ->" + isPrimeNumber(73));
 	}
 	
 	
@@ -47,3 +47,12 @@ public class HashSetTest {
 	}
 
 }
+
+/*
+    OutPut:
+	    Map put return type --> null
+		Map put return type --> 1
+		size--> 2
+		Umesh
+		puja 
+ */

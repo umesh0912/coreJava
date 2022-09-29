@@ -4,31 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
-public class Main {
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
-	final int num = 12;
+public class FrequencyMapTest {
 
-	public void display() {
-
-		int num = 20;
-
-		Runnable r = new Runnable() {
-
-			int num = 15;
-
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				System.out.println(this.num);
-			}
-		};
-
-		r.run();
-
-	}
-
+	@ToString
+	@EqualsAndHashCode
 	class Item {
 		String itemName;
 		String brand;
@@ -60,37 +47,34 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Main m = new Main();
-
-		m.display();
+		FrequencyMapTest m = new FrequencyMapTest();
 
 		String str = "Item1:A|Item2:B|Item1:A|Item3:A|Item1:H|Item4:T|Item2:M|Item2:B|Item1:G|Item4:F";
 
 		String[] arr = str.split("\\|");
 
-		for (String str1 : arr) {
-			System.out.println("list--> " + str1);
-		}
-
 		List<String> list = Arrays.asList(arr);
-
-		// List<Items> itemName = list.stream()
 
 		List<Item> items = new ArrayList<>();
 
+		// Split and map to Item
 		list.forEach(e -> {
 
 			String[] arrStr = e.split(":");
 
-			items.add(new Main().new Item(arrStr[0], arrStr[1]));
+			items.add(new FrequencyMapTest().new Item(arrStr[0], arrStr[1]));
 
 		});
 
-		Map<String, List<Item>> groupByItem = items.stream()
-											.collect(Collectors.groupingBy(Item::getItemName));
-		
-		Map<String, List<Item>> groupByBrand = items.stream()
-				.collect(Collectors.groupingBy(Item::getBrand));
+		// Grouping by Item Name
+		Map<String, List<Item>> groupByItem = items.stream().collect(Collectors.groupingBy(Item::getItemName));
+
+		groupByItem.forEach((k, v) -> System.out.println("key --> " + k + "  value --> " + v.size()));
+
+		// Grouping by Item Brand
+		Map<String, List<Item>> groupByBrand = items.stream().collect(Collectors.groupingBy(Item::getBrand));
+
+		groupByBrand.forEach((k, v) -> System.out.println("key --> " + k + "  value --> " + v.size()));
 
 		System.out.println("List-->" + items.size());
 
